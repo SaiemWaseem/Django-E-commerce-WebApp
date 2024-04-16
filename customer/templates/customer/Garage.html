@@ -1,0 +1,88 @@
+{% extends 'customer/base.html' %}
+{% load static %}
+{% block content %}
+<div>
+    <div class="container mb-5">
+        <style>
+            body {
+                background-image: url('/static/customer/images/Garage.jpg');
+                background-repeat: no-repeat;
+                color: rgb(235, 152, 29);
+                background-attachment: fixed;
+                background-size: cover;
+
+            }
+        </style>
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-8 col-sm-12 offset-md-1 p-4 text-center">
+
+                <h1 style="font-size: 48px; font-family: 'Arial', sans-serif; font-weight: bold; text-align: center; margin-top: 0.1px;">Discover Our Exquisite Luxury Car Collection</h1>
+
+                <div style="text-align: center;">
+                    <img src="{% static 'customer/images/logo.png' %}" alt="Professional Logo" height="100" width="150" style="border-radius: 20px;">
+                </div>   
+
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+<div class="container mb-5" style="background-color: rgba(26, 24, 24, 0.5); color:#f5f0f0;">
+
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-8 col-sm-12 offset-md-1 p-4 text-center">
+            <h2 style="margin-bottom:20px; font-family: Algerian, sans-serif;">Explore Our Luxury Cars:</h2>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        {% for car in luxury_cars %}
+        <div class="col-md-4 col-sm-12 text-center mb-5">
+            <img class="rounded" src="{{ car.image.url }}" width="300" height="200">
+            <a href="{% url 'product' car.id %}">
+                <h5 class="mt-3">{{ car.name }}</h5>
+            </a>
+            <p>Price: ${{ car.price | floatformat }}</p>
+            <p>{{ car.description }}</p>
+        </div>
+        {% endfor %}
+    </div>
+    
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-8 col-sm-12 offset-md-1 p-4 text-center">
+            <h2 style="margin-bottom:20px; font-family: Algerian, sans-serif;">Discover Our Vintage Cars:</h2>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        {% for car in vintage_cars %}
+        <div class="col-md-4 col-sm-12 text-center mb-5">
+            <img class="rounded" src="{{ car.image.url }}" width="300" height="200">
+            <a href="{% url 'product' car.id %}">
+                <h5 class="mt-3">{{ car.name }}</h5>
+            </a>
+            <p>Price: ${{ car.price | floatformat }}</p>
+            <p>{{ car.description }}</p>
+        </div>
+        {% endfor %}
+    </div>
+    
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-8 col-sm-12 offset-md-1 p-4 text-center">
+            <h2 style="margin-bottom:20px; font-family: Algerian, sans-serif;">Browse Our Classic Cars:</h2>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        {% for car in classic_cars %}
+        <div class="col-md-4 col-sm-12 text-center mb-5">
+            <img class="rounded" src="{{ car.image.url }}" width="300" height="200">
+            <a href="{% url 'product' car.id %}">
+                <h5 class="mt-3">{{ car.name }}</h5>
+            </a>
+            <p>Price: ${{ car.price | floatformat }}</p>
+            <p>{{ car.description }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}

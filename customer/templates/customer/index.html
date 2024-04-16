@@ -1,0 +1,74 @@
+{% extends 'customer/base.html' %}
+{% load static %}
+{% block content %}
+<div>
+
+
+    <style>
+        body {
+            background-image: url('/static/customer/images/28805.jpg');
+            background-repeat: no-repeat;
+            color: hwb(0 96% 3%);
+            background-attachment: fixed;
+            background-size: cover;
+        }
+    </style>
+
+
+    <div class="container mb-5">
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-8 col-sm-12 offset-md-1 p-4 text-center">
+                <div class="row justify-content-center mt-5">
+                    <div style="text-align: center; padding: 20px; border-radius: 10px;">
+                        <h1 style="font-family: 'Arial', sans-serif; font-size: 48px; font-weight: bold; text-transform: uppercase; margin: 0;">PRESTIGE MOTORSPORTS ENTERPRISES</h1>
+                    </div>                    
+                    <div style="text-align: center;">
+                        <img src="{% static 'customer/images/logo.png' %}" alt="Professional Logo" height="70" width="150" style="border-radius: 20px;">
+                    </div>                    
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-8 col-sm-12 offset-md-1 p-4 text-center">
+
+                <h2>About Us!</h2>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-1">
+            <div class="col-md-10 col-sm-12 offset-md-1 p-4 text-center">
+                <p>
+                <h5>Welcome to Prestige Motorsports, where we specialize in providing a premier car-buying experience since our establishment. As a family-owned dealership, we pride ourselves on offering a curated selection of high-quality, pre-owned vehicles, including luxury, exotic, and performance cars, meticulously inspected for quality and reliability. Located in Defence Lahore, our knowledgeable and friendly team is dedicated to assisting you every step of the way, from exploring our extensive inventory to securing personalized financing options. At Prestige Motorsports, your satisfaction is our top priority, and we look forward to exceeding your expectations and building a lasting relationship based on trust and integrity.</h5>
+                </p>
+                <div>
+                    <p>
+                    <h5>"Elevate your driving experience with Prestige Motorsports! where luxury meets reliability."</h5>
+                    </p>
+                </div>
+                <div>
+                    <div>
+                        <p>
+
+                        <h5>Make a reservation to avoid any delays, specially on the weekends</h5>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                        <h4>Location: Defence Raya Golf ResortSector M DHA Phase 6, Lahore, Punjab
+                            Pakistan</h4>
+                        </p>
+                    </div>
+                    <div class="row justify-content-center mt-5">
+
+                        <div style="text-align: center;">
+                            <img src="{% static 'customer/images/Location.png' %}" alt="Professional Location Image" style="max-width: 100%; height: auto; border-radius: 10px;">
+                        </div>                                           
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock content %}
