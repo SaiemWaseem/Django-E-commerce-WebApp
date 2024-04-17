@@ -14,11 +14,15 @@ class Index(View):
 
 class Garage(View):
     def get(self, request, *args, **kwargs):
-        luxury_cars = Car.objects.filter(category__name__contains='Luxury')
-        vintage_cars = Car.objects.filter(category__name__contains='Vintage')
-        classic_cars = Car.objects.filter(category__name__contains='Classic')
+        try:
+            luxury_cars = Car.objects.filter(category__name__contains='Luxury')
+            vintage_cars = Car.objects.filter(category__name__contains='Vintage')
+            classic_cars = Car.objects.filter(category__name__contains='Classic')
+        except Car.DoesNotExist:
+            luxury_cars = []
+            vintage_cars = []
+            classic_cars = []
 
-        
         context = {
             'luxury_cars': luxury_cars,
             'vintage_cars': vintage_cars,
